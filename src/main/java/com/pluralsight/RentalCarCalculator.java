@@ -3,15 +3,17 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class RentalCarCalculator {
+    private static final int DAILY_RENTAL_RATE =;
+    private static final int TOLL_TAG_RATE = ;
+
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
-// Constants
-        final double DAILY_RENTAL_RATE = 29.99;
-        final double TOLL_TAG_RATE = 3.95;
-        final double GPS_RATE = 2.95;
-        final double ROADSIDE_RATE = 3.95;
+         double DAILY_RENTAL_RATE = 29.99;
+         double TOLL_TAG_RATE = 3.95;
+     double GPS_RATE = 2.95;
+        double ROADSIDE_RATE = 3.95;
 // User input
         System.out.print("Enter pickup date: ");
         String pickupDate = scanner.nextLine();
@@ -37,7 +39,8 @@ public class RentalCarCalculator {
         double tollCost = tollTag.equalsIgnoreCase("yes") ? rentalDays * TOLL_TAG_RATE : 0;
         double gpsCost = gps.equalsIgnoreCase("yes") ? rentalDays * GPS_RATE : 0;
         double roadsideCost = roadside.equalsIgnoreCase("yes") ? rentalDays * ROADSIDE_RATE : 0;
-
+//   multiply tolltag by rental days by gpsrate, and roadside rate
+//
 // Young driver surcharge ($30/day if under 25)
         double underageSurcharge = 0;
         if (age < 25) {
